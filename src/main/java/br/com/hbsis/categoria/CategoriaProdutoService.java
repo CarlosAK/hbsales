@@ -13,7 +13,6 @@ import java.util.Optional;
 public class CategoriaProdutoService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CategoriaProdutoService.class);
-
     private final ICategoriaProdutoRepository iCategoriaProdutoRepository;
     private final FornecedorService fornecedorService;
 
