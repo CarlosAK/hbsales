@@ -1,95 +1,125 @@
 package br.com.hbsis.fornecedor;
 
-public class FornecedorDTO {
 
+public class FornecedorDTO {
     private Long id;
-    private String RazaoSocial;
-    private String CNPJ;
-    private String NomeFantasia;
-    private String Endereco;
-    private double Telefone;
-    private String Email;
+    private String razaoSocial;
+    private String cnpj;
+    private String nome;
+    private String endereco;
+    private String telefone;
+    private String email;
 
     public FornecedorDTO() {
+
     }
 
-    public FornecedorDTO(Long id, String razaoSocial, String CNPJ, String nomeFantasia, String endereco, double telefone, String email) {
+    public FornecedorDTO(Long id, String razaoSocial, String cnpj, String nome, String endereco, String telefone, String email) {
         this.id = id;
-        this.RazaoSocial = razaoSocial;
-        this.CNPJ = CNPJ;
-        this.NomeFantasia = nomeFantasia;
-        this.Endereco = endereco;
-        this.Telefone = telefone;
-        this.Email = email;
+        this.razaoSocial = razaoSocial;
+        this.cnpj = cnpj;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.email = email;
+
     }
 
-    public static FornecedorDTO of(Fornecedor fornecedor){
-        return new FornecedorDTO(
-               fornecedor.getId(),
-               fornecedor.getRazaoSocial(),
-               fornecedor.getCNPJ(),
-               fornecedor.getNomeFantasia(),
-               fornecedor.getEndereco(),
-               fornecedor.getTelefone(),
-               fornecedor.getEmail()
 
-     );
+    public static FornecedorDTO of(Fornecedor fornecedor) {
+        return new FornecedorDTO(
+                fornecedor.getId(),
+                fornecedor.getRazaoSocial(),
+                fornecedor.getCnpj(),
+                fornecedor.getNome(),
+                fornecedor.getEndereco(),
+                fornecedor.getTelefone(),
+                fornecedor.getEmail());
 
     }
 
     public Long getId() {
         return id;
+
     }
 
     public void setId(Long id) {
         this.id = id;
+
     }
 
     public String getRazaoSocial() {
-        return RazaoSocial;
+        return razaoSocial;
+
     }
 
     public void setRazaoSocial(String razaoSocial) {
-        RazaoSocial = razaoSocial;
+        this.razaoSocial = razaoSocial;
+
     }
 
-    public String getCNPJ() {
-        return CNPJ;
+    public String getCnpj() {
+        return cnpj;
+
     }
 
-    public void setCNPJ(String CNPJ) {
-        this.CNPJ = CNPJ;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+
     }
 
-    public String getNomeFantasia() {
-        return NomeFantasia;
+    public String getNome() {
+        return nome;
+
     }
 
-    public void setNomeFantasia(String nomeFantasia) {
-        NomeFantasia = nomeFantasia;
+    public void setNome(String nome) {
+        this.nome = nome;
+
     }
 
     public String getEndereco() {
-        return Endereco;
+        return endereco;
+
     }
 
     public void setEndereco(String endereco) {
-        Endereco = endereco;
+        this.endereco = endereco;
+
     }
 
-    public double getTelefone() {
-        return Telefone;
+    public String getTelefone() {
+        return telefone;
+
     }
 
-    public void setTelefone(double telefone) {
-        Telefone = telefone;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+
     }
 
     public String getEmail() {
-        return Email;
+        return email;
+
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
+
     }
+
+    @Override
+    public String toString() {
+        return "Fornecedor{" +
+                "id=" + id +
+                ", Razao Social ='" + razaoSocial + '\'' +
+                ", CNPJ ='" + cnpj + '\'' +
+                ", Nome ='" + nome + '\'' +
+                ", Endereço ='" + endereco + '\'' +
+                ", Telefone ='" + telefone + '\'' +
+                ", E-mail ='" + email + '\'' +
+                '}';
+
+    }
+
 }

@@ -1,93 +1,138 @@
 package br.com.hbsis.fornecedor;
 
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "seg_fornecedor")
-class Fornecedor {
+@Table(name = "seg_fornecedores")
+
+public class Fornecedor {
+
+    public Fornecedor() {
+
+    }
+
+    public Fornecedor(Long id, String razaoSocial, String cnpj, String nome, String endereco, String telefone, String email) {
+        this.id = id;
+        this.razaoSocial = razaoSocial;
+        this.cnpj = cnpj;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.email = email;
+
+    }
+
+    public Fornecedor(String razaoSocial, String cnpj, String nome, String endereco, String telefone, String email) {
+        this.razaoSocial = razaoSocial;
+        this.cnpj = cnpj;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.email = email;
+
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
-    @Column(name = "Razão Social", unique = true, nullable = false, length = 100)
-    private String RazaoSocial;
-    @Column(name = "CNPJ", unique = true, nullable = false, length = 100)
-    private String CNPJ;
-    @Column(name = "Nome Fantasia")
-    private String NomeFantasia;
-    @Column(name = "Endereço")
-    private String Endereco;
-    @Column(name = "Telefone")
-    private double Telefone;
-    @Column(name = "Email")
-    private String Email;
+    @Column(name = "razao_social", unique = true, nullable = false, length = 100)
+    private String razaoSocial;
+    @Column(name = "cnpj", unique = true, nullable = false, length = 50)
+    private String cnpj;
+    @Column(name = "nome", nullable = false)
+    private String nome;
+    @Column(name = "endereco", nullable = false)
+    private String endereco;
+    @Column(name = "telefone", length = 36, nullable = false)
+    private String telefone;
+    @Column(name = "email", nullable = false)
+    private String email;
 
-    public Fornecedor(){
-    }
-
-    public Fornecedor(String nomeFantasia, String CNPJ){
-        this.NomeFantasia = nomeFantasia;
-        this.CNPJ = CNPJ;
-    }
-
-    public Fornecedor(String razaoSocial, String cnpj, String nomeFantasia, String endereco, double telefone, String email) {
-    }
-
-    public static FornecedorDTO of(Fornecedor fornecedor) {
-        return null;
-    }
-
-    public Long getId(){
+    public Long getId() {
         return id;
+
     }
 
-    public String getRazaoSocial(){
-        return RazaoSocial;
+    public void setId(Long id) {
+        this.id = id;
+
     }
 
-    public void setRazaoSocial(String razaoSocial){
-        this.RazaoSocial = razaoSocial;
+    public String getRazaoSocial() {
+        return razaoSocial;
+
     }
 
-    public String getCNPJ(){
-        return CNPJ;
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
+
     }
 
-    public void setCNPJ(String CNPJ){
-        this.CNPJ = CNPJ;
+    public String getCnpj() {
+        return cnpj;
+
     }
 
-    public String getNomeFantasia() {
-        return NomeFantasia;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+
     }
 
-    public void setNomeFantasia(String nomeFantasia){
-        this.NomeFantasia = nomeFantasia;
+    public String getNome() {
+        return nome;
+
     }
 
-    public String getEndereco(){
-        return Endereco;
+    public void setNome(String nome) {
+        this.nome = nome;
+
     }
 
-    public void setEndereco(String endereco){
-        this.Endereco = endereco;
+    public String getEndereco() {
+        return endereco;
+
     }
 
-    public double getTelefone(){
-        return Telefone;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+
     }
 
-    public void setTelefone(double telefone){
-        this.Telefone = telefone;
+    public String getTelefone() {
+        return telefone;
+
     }
 
-    public String getEmail(){
-        return Email;
-    }
-    public void setEmail(String email){
-        this.Email = email;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+
     }
 
+    public String getEmail() {
+        return email;
 
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+
+    }
+
+    @Override
+    public String toString() {
+
+        return "Fornecedor{" +
+                "id=" + id +
+                ", Razao Social ='" + razaoSocial + '\'' +
+                ", CNPJ ='" + cnpj + '\'' +
+                ", Nome ='" + nome + '\'' +
+                ", Endereço ='" + endereco + '\'' +
+                ", Telefone ='" + telefone + '\'' +
+                ", E-mail ='" + email + '\'' +
+                '}';
+
+    }
 
 }
