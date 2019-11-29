@@ -37,7 +37,7 @@ public class UsuarioRest {
 	}
 
 	@PutMapping("/{id}")
-	public UsuarioDTO udpate(@PathVariable("id") Long id, @RequestBody UsuarioDTO usuarioDTO) {
+	public UsuarioDTO update(@PathVariable("id") Long id, @RequestBody UsuarioDTO usuarioDTO) {
 		LOGGER.info("Recebendo Update para Usuário de ID: {}", id);
 		LOGGER.debug("Payload: {}", usuarioDTO);
 

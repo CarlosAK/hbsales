@@ -1,8 +1,9 @@
 package br.com.hbsis.categoria;
 
 import br.com.hbsis.fornecedor.Fornecedor;
-
+import com.opencsv.bean.CsvBindByPosition;
 import javax.persistence.*;
+
 
 @Entity
 @Table(name = "seg_categorias")
@@ -10,13 +11,18 @@ public class CategoriaProduto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @CsvBindByPosition(position = 0)
     private Long id;
-    @Column(name = "cod_categoria", unique = true, nullable = false)
+    @Column(name = "cod_categoria", unique = true, nullable = false, length = 100)
+    @CsvBindByPosition(position = 1)
     private String codCategoria;
     @Column(name = "nome", unique = true, nullable = false, length = 100)
+    @CsvBindByPosition(position = 2)
     private String nome;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_fornecedor", referencedColumnName = "id")
+    @CsvBindByPosition(position = 3)
     private Fornecedor fornecedor;
 
     public CategoriaProduto() {

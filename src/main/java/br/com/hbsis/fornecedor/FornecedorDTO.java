@@ -25,6 +25,16 @@ public class FornecedorDTO {
 
     }
 
+    public FornecedorDTO(String razaoSocial, String cnpj, String nome, String endereco, String telefone, String email) {
+        this.razaoSocial = razaoSocial;
+        this.cnpj = cnpj;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.email = email;
+    }
+
+
 
     public static FornecedorDTO of(Fornecedor fornecedor) {
         return new FornecedorDTO(

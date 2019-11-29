@@ -5,7 +5,7 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -115,6 +115,16 @@ public class CategoriaProdutoService {
 
         this.iCategoriaProdutoRepository.deleteById(id);
 
+    }
+
+    public List<String> formatedCSV(List<CategoriaProduto> categoriaProdutos){
+
+        List<String> categoriaProdutosformatados = new ArrayList<>();
+        for (int i = 0; i < categoriaProdutos.size(); i++){
+            categoriaProdutosformatados.add(categoriaProdutos.get(i).toString());
+        }
+
+        return categoriaProdutosformatados;
     }
 
 }

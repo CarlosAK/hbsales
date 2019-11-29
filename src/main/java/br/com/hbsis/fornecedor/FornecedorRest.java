@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 
@@ -29,7 +28,9 @@ public class FornecedorRest {
         LOGGER.info("Recebendo solicitação de persistência de Fornecedor...");
         LOGGER.debug("Payload: {}", fornecedorDTO);
 
+
         return this.fornecedorService.save(fornecedorDTO);
+
 
     }
 
@@ -52,10 +53,9 @@ public class FornecedorRest {
     }
 
     @PutMapping("/{id}")
-    public FornecedorDTO udpate(@PathVariable("id") Long id, @RequestBody FornecedorDTO fornecedorDTO) {
+    public FornecedorDTO update(@PathVariable("id") Long id, @RequestBody FornecedorDTO fornecedorDTO) {
 
         LOGGER.info("Recebendo Update para fornecedor de ID: {}", id);
-
         LOGGER.debug("Payload: {}", fornecedorDTO);
 
         return this.fornecedorService.update(fornecedorDTO, id);

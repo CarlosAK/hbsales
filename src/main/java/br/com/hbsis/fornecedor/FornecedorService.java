@@ -5,7 +5,6 @@ import com.microsoft.sqlserver.jdbc.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -13,7 +12,6 @@ import java.util.Optional;
 public class FornecedorService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FornecedorService.class);
-
     private final IFornecedorRepository iFornecedorRepository;
 
     public FornecedorService(IFornecedorRepository iFornecedorRepository) {
@@ -21,21 +19,20 @@ public class FornecedorService {
 
     }
 
-
     public FornecedorDTO save(FornecedorDTO fornecedorDTO) {
         this.validate(fornecedorDTO);
 
         LOGGER.info("Salvando Fornecedor");
-
         LOGGER.debug("Fornecedor: {}", fornecedorDTO);
 
-        Fornecedor fornecedor = new Fornecedor(
-                fornecedorDTO.getRazaoSocial(),
-                fornecedorDTO.getCnpj(),
-                fornecedorDTO.getNome(),
-                fornecedorDTO.getEndereco(),
-                fornecedorDTO.getTelefone(),
-                fornecedorDTO.getEmail());
+        Fornecedor fornecedor = new Fornecedor();
+
+                fornecedor.setRazaoSocial(fornecedorDTO.getRazaoSocial());
+                fornecedor.setCnpj(fornecedorDTO.getCnpj());
+                fornecedor.setNome(fornecedorDTO.getNome());
+                fornecedor.setEndereco(fornecedorDTO.getEndereco());
+                fornecedor.setTelefone(fornecedorDTO.getTelefone());
+                fornecedor.setEmail(fornecedorDTO.getEmail());
 
         fornecedor = this.iFornecedorRepository.save(fornecedor);
         return FornecedorDTO.of(fornecedor);
