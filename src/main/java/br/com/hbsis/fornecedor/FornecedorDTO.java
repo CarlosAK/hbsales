@@ -25,17 +25,6 @@ public class FornecedorDTO {
 
     }
 
-    public FornecedorDTO(String razaoSocial, String cnpj, String nome, String endereco, String telefone, String email) {
-        this.razaoSocial = razaoSocial;
-        this.cnpj = cnpj;
-        this.nome = nome;
-        this.endereco = endereco;
-        this.telefone = telefone;
-        this.email = email;
-    }
-
-
-
     public static FornecedorDTO of(Fornecedor fornecedor) {
         return new FornecedorDTO(
                 fornecedor.getId(),
@@ -44,90 +33,78 @@ public class FornecedorDTO {
                 fornecedor.getNome(),
                 fornecedor.getEndereco(),
                 fornecedor.getTelefone(),
-                fornecedor.getEmail());
+                fornecedor.getEmail()
+        );
 
     }
 
+
     public Long getId() {
         return id;
-
     }
 
     public void setId(Long id) {
         this.id = id;
-
     }
 
     public String getRazaoSocial() {
         return razaoSocial;
-
     }
 
     public void setRazaoSocial(String razaoSocial) {
         this.razaoSocial = razaoSocial;
-
     }
 
     public String getCnpj() {
         return cnpj;
-
     }
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
-
     }
 
     public String getNome() {
         return nome;
-
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-
     }
 
     public String getEndereco() {
         return endereco;
-
     }
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
-
     }
 
     public String getTelefone() {
         return telefone;
-
     }
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-
     }
 
     public String getEmail() {
         return email;
-
     }
 
     public void setEmail(String email) {
         this.email = email;
-
     }
 
     @Override
     public String toString() {
-        return "Fornecedor{" +
-                "id=" + id +
-                ", Razao Social ='" + razaoSocial + '\'' +
-                ", CNPJ ='" + cnpj + '\'' +
-                ", Nome ='" + nome + '\'' +
-                ", Endereço ='" + endereco + '\'' +
-                ", Telefone ='" + telefone + '\'' +
-                ", E-mail ='" + email + '\'' +
+        return "FornecedorDTO{" +
+                "id =" + id +
+                ", razao_social ='" + razaoSocial + '\'' +
+                ", cnpj ='" + cnpj + '\'' +
+                ", nome ='" + nome + '\'' +
+                ", endereço ='" + endereco + '\'' +
+                ", telefone ='" + telefone + '\'' +
+                ", email ='" + email + '\'' +
                 '}';
 
     }
