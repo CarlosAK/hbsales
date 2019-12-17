@@ -38,7 +38,6 @@ public class FornecedorDTO {
 
     }
 
-
     public Long getId() {
         return id;
     }
@@ -95,18 +94,5 @@ public class FornecedorDTO {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "FornecedorDTO{" +
-                "id =" + id +
-                ", razao_social ='" + razaoSocial + '\'' +
-                ", cnpj ='" + cnpj + '\'' +
-                ", nome ='" + nome + '\'' +
-                ", endereço ='" + endereco + '\'' +
-                ", telefone ='" + telefone + '\'' +
-                ", email ='" + email + '\'' +
-                '}';
-
-    }
 
 }

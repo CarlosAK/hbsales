@@ -10,8 +10,10 @@ import java.util.UUID;
  */
 @Service
 public class UsuarioService {
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(UsuarioService.class);
 	private final IUsuarioRepository iUsuarioRepository;
+
 	public UsuarioService(IUsuarioRepository iUsuarioRepository) {
 		this.iUsuarioRepository = iUsuarioRepository;
 	}
@@ -19,10 +21,13 @@ public class UsuarioService {
 		this.validate(usuarioDTO);
 		LOGGER.info("Salvando usuário");
 		LOGGER.debug("Usuario: {}", usuarioDTO);
+
 		Usuario usuario = new Usuario();
+
 		usuario.setLogin(usuarioDTO.getLogin());
 		usuario.setSenha(usuarioDTO.getSenha());
 		usuario.setUuid(UUID.randomUUID().toString());
+
 		usuario = this.iUsuarioRepository.save(usuario);
 		return UsuarioDTO.of(usuario);
 	}

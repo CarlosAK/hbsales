@@ -13,10 +13,10 @@ public class Categoria {
     @CsvBindByPosition(position = 0)
     private Long id;
     @CsvBindByPosition(position = 1)
-    @Column(name = "nome_categoria", unique = true, nullable = false, length = 100)
+    @Column(name = "nome_categoria", unique = true, nullable = false, length = 50)
     private String nomeCategoria;
     @CsvBindByPosition(position = 2)
-    @Column(name = "cod_categoria")
+    @Column(name = "cod_categoria", unique = true, nullable = false, length = 10)
     private String codCategoria;
     @ManyToOne
     @JoinColumn(name = "id_fornecedor", referencedColumnName = "id")
@@ -24,6 +24,13 @@ public class Categoria {
     private Fornecedor fornecedor;
 
     public Categoria() {
+    }
+
+    public Categoria(Long id, String nomeCategoria, String codCategoria, Fornecedor fornecedor) {
+        this.id = id;
+        this.nomeCategoria = nomeCategoria;
+        this.codCategoria = codCategoria;
+        this.fornecedor = fornecedor;
     }
 
     public Long getId() {
@@ -58,10 +65,5 @@ public class Categoria {
         this.fornecedor = fornecedor;
     }
 
-    @Override
-    public String toString() {
-        return "categoria [IdFornecedor=" + fornecedor.getId() + ", nomeCategoria=" + nomeCategoria + " ," +
-                " idCategoria=" + codCategoria + "]";
 
-    }
 }
