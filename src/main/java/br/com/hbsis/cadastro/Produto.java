@@ -34,7 +34,7 @@ public class Produto {
     @Column(name = "unidade_medida", nullable = false, length = 25)
     private String unidadeMedida;
 
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Column(name = "validade")
     private LocalDate validade;
 
@@ -131,4 +131,18 @@ public class Produto {
         this.linhaCategoria = linhaCategoria;
     }
 
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", codProduto='" + codProduto + '\'' +
+                ", nomeProduto='" + nomeProduto + '\'' +
+                ", precoProduto=" + precoProduto +
+                ", unidadeCx=" + unidadeCx +
+                ", pesoUn=" + pesoUn +
+                ", unidadeMedida='" + unidadeMedida + '\'' +
+                ", validade=" + validade +
+                ", linhaCategoria=" + linhaCategoria +
+                '}';
+    }
 }

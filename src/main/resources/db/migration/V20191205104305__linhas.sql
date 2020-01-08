@@ -1,9 +1,9 @@
 create table linha_categorias
 (
     id      BIGINT          IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    cod_linha_categoria     VARCHAR (10) NOT NULL,
+    cod_linha_categoria     VARCHAR (100) NOT NULL,
     cat_linha_categorias    VARCHAR (100) NOT NULL,
-    nome_linha_categoria    VARCHAR (50) NOT NULL,
+    nome_linha_categoria    VARCHAR (100) NOT NULL,
 
 );
 

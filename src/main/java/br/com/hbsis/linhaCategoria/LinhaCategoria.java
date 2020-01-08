@@ -22,7 +22,7 @@ public class LinhaCategoria {
     private String nomeLinhaCategoria;
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "fk_id_categoria", referencedColumnName = "id", nullable = false)
     private Categoria categoria;
 
     public LinhaCategoria() {

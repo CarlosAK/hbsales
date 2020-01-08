@@ -65,5 +65,13 @@ public class Categoria {
         this.fornecedor = fornecedor;
     }
 
-
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "id=" + id +
+                ", nomeCategoria='" + nomeCategoria + '\'' +
+                ", codCategoria='" + codCategoria + '\'' +
+                ", fornecedor=" + fornecedor +
+                '}';
+    }
 }

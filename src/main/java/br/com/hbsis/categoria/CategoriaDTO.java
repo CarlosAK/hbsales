@@ -59,5 +59,13 @@ public class CategoriaDTO {
         this.fornecedor = fornecedor;
     }
 
-
+    @Override
+    public String toString() {
+        return "CategoriaDTO{" +
+                "id=" + id +
+                ", nomeCategoria='" + nomeCategoria + '\'' +
+                ", codCategoria='" + codCategoria + '\'' +
+                ", fornecedor=" + fornecedor +
+                '}';
+    }
 }

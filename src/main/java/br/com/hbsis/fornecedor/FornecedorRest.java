@@ -25,7 +25,7 @@ public class FornecedorRest {
 
     @PostMapping
     public FornecedorDTO save(@RequestBody FornecedorDTO fornecedorDTO) {
-        LOGGER.info("Recebendo solicitação de persistência de usuário...");
+        LOGGER.info("Recebendo solicitação de persistência de fornecedor...");
         LOGGER.debug("Payload: {}", fornecedorDTO);
 
         return this.fornecedorService.save(fornecedorDTO);

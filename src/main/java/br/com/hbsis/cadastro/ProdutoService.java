@@ -99,7 +99,7 @@ public class ProdutoService<produto, iProdutoRepository> {
 
         }
 
-        throw new IllegalArgumentException(String.format("esse  %s não existe", id));
+        throw new IllegalArgumentException(String.format("esse %s não existe", id));
 
     }
 
